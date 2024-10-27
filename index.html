@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    /* Container styling */
+    #contactFormContainer {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+    }
+
+    /* Label styling */
+    #contactForm label {
+      font-size: 14px;
+      color: #333;
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Input styling */
+    #contactForm input[type="text"],
+    #contactForm input[type="email"],
+    #contactForm input[type="tel"],
+    #contactForm textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #333;
+      background-color: #fff;
+    }
+
+    /* Button styling */
+    #contactForm button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #contactForm button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div id="contactFormContainer">
+  <form id="contactForm" action="https://script.google.com/macros/s/AKfycbxwlZv2l3ctWjaSI0dDVMHja2s4s6YaNMzEB6vGHXWAz6BYoFRtAYjm2aNHEVa1kEDX/exec" 
+        method="POST" target="hidden_iframe" onsubmit="submittedForm()">
+    
+    <h2>Contact Us</h2>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+    
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+    
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<!-- Hidden iframe to prevent page reload on form submit -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  function submittedForm() {
+    alert("Thank you! Your message has been sent.");
+    document.getElementById("contactForm").reset();
+  }
+</script>
+
+</body>
+</html>
